@@ -310,99 +310,83 @@ if (header) {
 const contactForm = document.getElementById("contactForm");
 
 if (contactForm) {
+contactForm.addEventListener("submit", function (event) {
 
-    contactForm.addEventListener("submit", function (event) {
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const message = document.getElementById("message");
 
-        event.preventDefault();
+    let valid = true;
 
-        const name = document.getElementById("name");
-        const email = document.getElementById("email");
-        const message = document.getElementById("message");
+    /* Nettoyage des anciennes erreurs */
 
-        let valid = true;
-
-        /* Nettoyage */
-
-        document.querySelectorAll(".form-error").forEach(error => {
-            error.classList.remove("show");
-        });
-
-        document.querySelectorAll(".error").forEach(field => {
-            field.classList.remove("error");
-        });
-
-        /* NOM */
-
-        if (name.value.trim().length < 2) {
-
-            showError(
-                name,
-                "Veuillez entrer votre nom."
-            );
-
-            valid = false;
-        }
-
-        /* EMAIL */
-
-        const emailPattern =
-            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (!emailPattern.test(email.value.trim())) {
-
-            showError(
-                email,
-                "Veuillez entrer une adresse e-mail valide."
-            );
-
-            valid = false;
-        }
-
-        /* MESSAGE */
-
-        if (message.value.trim().length < 10) {
-
-            showError(
-                message,
-                "Votre message doit contenir au moins 10 caractères."
-            );
-
-            valid = false;
-        }
-
-        /* SI ERREUR */
-
-        if (!valid) {
-            return;
-        }
-
-        /* SUCCÈS */
-
-        const button =
-            contactForm.querySelector(".contact-button");
-
-        button.classList.add("loading");
-
-        button.innerHTML =
-            "Envoi en cours...";
-
-        setTimeout(() => {
-
-            button.classList.remove("loading");
-
-            button.innerHTML =
-                'Message envoyé <span>✓</span>';
-
-            showSuccess(
-                "Merci ! Votre demande a bien été enregistrée."
-            );
-
-            contactForm.reset();
-
-        }, 1000);
-
+    document.querySelectorAll(".form-error").forEach(error => {
+        error.classList.remove("show");
     });
 
+    document.querySelectorAll(".error").forEach(field => {
+        field.classList.remove("error");
+    });
+
+    /* NOM */
+
+    if (name.value.trim().length < 2) {
+
+        showError(
+            name,
+            "Veuillez entrer votre nom."
+        );
+
+        valid = false;
+    }
+
+    /* EMAIL */
+
+    const emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(email.value.trim())) {
+
+        showError(
+            email,
+            "Veuillez entrer une adresse e-mail valide."
+        );
+
+        valid = false;
+    }
+
+    /* MESSAGE */
+
+    if (message.value.trim().length < 10) {
+
+        showError(
+            message,
+            "Votre message doit contenir au moins 10 caractères."
+        );
+
+        valid = false;
+    }
+
+    /* SI ERREUR */
+
+    if (!valid) {
+
+        event.preventDefault();
+        return;
+
+    }
+
+    /* VRAI ENVOI */
+
+    const button =
+        contactForm.querySelector(".contact-button");
+
+    button.classList.add("loading");
+
+    button.innerHTML =
+        "Envoi en cours...";
+
+});
 
     /* =====================================================
        FONCTION ERREUR
