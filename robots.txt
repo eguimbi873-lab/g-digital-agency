@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://g-digital-agency.vercel.app/sitemap.xml
