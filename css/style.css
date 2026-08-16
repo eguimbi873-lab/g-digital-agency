@@ -3253,3 +3253,148 @@ textarea {
 
 }
 
+/* ================= ELEVARO PROJECT ================= */
+
+.project-elevaro {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 180, 80, 0.22), transparent 35%),
+        linear-gradient(135deg, #24150d, #0d0907 65%, #1b1009);
+}
+
+.project-elevaro::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(230, 154, 70, 0.15);
+    filter: blur(30px);
+    top: -70px;
+    right: -50px;
+}
+
+.project-elevaro .project-window {
+    position: absolute;
+    width: 72%;
+    height: 68%;
+    left: 14%;
+    top: 16%;
+    padding: 18px;
+    border: 1px solid rgba(255, 210, 150, 0.18);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.project-elevaro .window-top span {
+    background: #e8a45b;
+}
+
+.project-elevaro .project-logo {
+    margin-top: 38px;
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #f4c27a;
+}
+
+.project-elevaro .project-lines {
+    margin-top: 24px;
+}
+
+.project-elevaro .project-lines span {
+    display: block;
+    height: 5px;
+    margin-bottom: 9px;
+    border-radius: 20px;
+    background: rgba(255, 220, 170, 0.2);
+}
+
+.project-elevaro .project-lines span:first-child {
+    width: 80%;
+    background: rgba(244, 194, 122, 0.65);
+}
+
+.project-elevaro .project-lines span:nth-child(2) {
+    width: 60%;
+}
+
+.project-elevaro .project-lines span:nth-child(3) {
+    width: 42%;
+}
+
+
+/* ================= KIVU TRANSIT PROJECT ================= */
+
+.project-kivu {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.30), transparent 35%),
+        linear-gradient(135deg, #071426, #08111f 60%, #0b1d34);
+}
+
+.project-kivu::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.18);
+    filter: blur(30px);
+    bottom: -30px;
+    left: -40px;
+}
+
+.project-kivu .project-window {
+    position: absolute;
+    width: 72%;
+    height: 68%;
+    left: 14%;
+    top: 16%;
+    padding: 18px;
+    border: 1px solid rgba(100, 170, 255, 0.2);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.045);
+    backdrop-filter: blur(10px);
+}
+
+.project-kivu .window-top span {
+    background: #3b82f6;
+}
+
+.project-kivu .project-logo {
+    margin-top: 38px;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #60a5fa;
+}
+
+.project-kivu .project-lines {
+    margin-top: 24px;
+}
+
+.project-kivu .project-lines span {
+    display: block;
+    height: 5px;
+    margin-bottom: 9px;
+    border-radius: 20px;
+    background: rgba(147, 197, 253, 0.18);
+}
+
+.project-kivu .project-lines span:first-child {
+    width: 85%;
+    background: rgba(96, 165, 250, 0.7);
+}
+
+.project-kivu .project-lines span:nth-child(2) {
+    width: 65%;
+}
+
+.project-kivu .project-lines span:nth-child(3) {
+    width: 45%;
+}
